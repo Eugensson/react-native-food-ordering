@@ -1,5 +1,4 @@
-import { Link, Tabs } from "expo-router";
-import { Pressable } from "react-native";
+import { Tabs } from "expo-router";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 import Colors from "@/constants/Colors";
@@ -35,9 +34,10 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="orders"
         options={{
           title: "Orders",
+          headerShown: false,
           tabBarIcon: ({ color }) => <TabBarIcon name="list" color={color} />,
         }}
       />

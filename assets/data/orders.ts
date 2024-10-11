@@ -1,6 +1,7 @@
-import { Order } from "../../src/types";
-import products from "./products";
 import dayjs from "dayjs";
+
+import { Order } from "@/assets/types";
+import products from "@/assets/data/products";
 
 const now = dayjs();
 
