@@ -3,9 +3,7 @@ import { StyleSheet, Text, Image, Pressable } from "react-native";
 
 import Colors from "@/constants/Colors";
 import { Product } from "@/assets/types";
-
-export const defaultPizzaImage =
-  "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/default.png";
+import { defaultPizzaImage } from "@/constants/images";
 
 type ProductListItemProps = {
   product: Product;
