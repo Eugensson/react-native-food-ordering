@@ -1,20 +1,24 @@
-import { Link, Tabs } from "expo-router";
+import { Link, Redirect, Tabs } from "expo-router";
 import { Pressable } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 import Colors from "@/constants/Colors";
+import { useAuth } from "@/providers/auth-provider";
 import { useColorScheme } from "@/components/useColorScheme";
 import { useClientOnlyValue } from "@/components/useClientOnlyValue";
 
-function TabBarIcon(props: {
+const TabBarIcon = (props: {
   name: React.ComponentProps<typeof FontAwesome>["name"];
   color: string;
-}) {
+}) => {
   return <FontAwesome size={20} style={{ marginBottom: -3 }} {...props} />;
-}
+};
 
-export default function TabLayout() {
+const TabLayout = () => {
   const colorScheme = useColorScheme();
+  const { isAdmin } = useAuth();
+
+  if (!isAdmin) return <Redirect href={"/"} />;
 
   return (
     <Tabs
@@ -48,4 +52,6 @@ export default function TabLayout() {
       />
     </Tabs>
   );
-}
+};
+
+export default TabLayout;
