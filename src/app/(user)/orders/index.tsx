@@ -4,7 +4,7 @@ import { FlatList } from "react-native";
 import orders from "@/assets/data/orders";
 import { OrderListItem } from "@/components/order-list-item";
 
-export default function OrdersScreen() {
+const OrdersScreen = () => {
   return (
     <>
       <Stack.Screen options={{ title: "Orders" }} />
@@ -15,4 +15,6 @@ export default function OrdersScreen() {
       />
     </>
   );
-}
+};
+
+export default OrdersScreen;

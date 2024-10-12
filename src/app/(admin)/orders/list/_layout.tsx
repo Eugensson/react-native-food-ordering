@@ -1,12 +1,12 @@
 import { withLayoutContext } from "expo-router";
-import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
 export const TopTabs = withLayoutContext(
   createMaterialTopTabNavigator().Navigator
 );
 
-export default function OrdersTabs() {
+const OrdersTabs = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "white" }} edges={["top"]}>
       <TopTabs>
@@ -14,4 +14,6 @@ export default function OrdersTabs() {
       </TopTabs>
     </SafeAreaView>
   );
-}
+};
+
+export default OrdersTabs;
