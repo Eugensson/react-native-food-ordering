@@ -3,12 +3,12 @@ import { Link, useSegments } from "expo-router";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { View, Text, StyleSheet, Pressable } from "react-native";
 
-import { Order } from "@/assets/types";
+import { Tables } from "@/assets/types";
 
 dayjs.extend(relativeTime);
 
 type OrderListItemProps = {
-  order: Order;
+  order: Tables<"orders">;
 };
 
 export const OrderListItem = ({ order }: OrderListItemProps) => {

@@ -1,11 +1,11 @@
 import { View, Text, Image, StyleSheet } from "react-native";
 
 import Colors from "@/constants/Colors";
-import { OrderItem } from "@/assets/types";
+import { Tables } from "@/assets/types";
 import { defaultPizzaImage } from "@/constants/images";
 
 type OrderItemListItemProps = {
-  item: OrderItem;
+  item: { products: Tables<"products"> } & Tables<"order_items">;
 };
 
 export const OrderItemListItem = ({ item }: OrderItemListItemProps) => {
@@ -19,7 +19,7 @@ export const OrderItemListItem = ({ item }: OrderItemListItemProps) => {
       <View style={{ flex: 1 }}>
         <Text style={styles.title}>{item.products.name}</Text>
         <View style={styles.subtitleContainer}>
-          <Text style={styles.price}>${item.products.price.toFixed(2)}</Text>
+          <Text style={styles.price}>${item?.products?.price?.toFixed(2)}</Text>
           <Text>Size: {item.size}</Text>
         </View>
       </View>

@@ -6,7 +6,7 @@ import { useCart } from "@/providers/cart-provider";
 import { CartListItem } from "@/components/cart-list-item";
 
 const CartScreen = () => {
-  const { items, total } = useCart();
+  const { items, total, checkout } = useCart();
 
   return (
     <View style={{ padding: 10 }}>
@@ -19,7 +19,7 @@ const CartScreen = () => {
       <Text style={{ marginTop: 10, fontSize: 20, fontWeight: "700" }}>
         Total: $ {total.toFixed(2)}
       </Text>
-      <Button text="Checkout" />
+      <Button text="Checkout" onPress={checkout} />
       <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
     </View>
   );
